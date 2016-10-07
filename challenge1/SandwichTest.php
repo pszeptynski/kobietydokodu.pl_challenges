@@ -20,6 +20,9 @@ class getSandwichTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals("BACON", Sandwich::getSandwich("EGGbreadBACONbreadCHEESE"));
     }
 
+    public function testTwoBreadPiecesOnly() {
+        $this->assertEquals("", Sandwich::getSandwich("breadbread"));
+    }
 }
 
 ?>
