@@ -7,4 +7,4 @@ php:
   - hhvm
   - nightly
   
-script: phpunit SandwichTest.php
+script: phpunit challenge1/SandwichTest.php
