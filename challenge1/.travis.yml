@@ -6,5 +6,5 @@ php:
   - '7.0'
   - hhvm
   - nightly
-  script: phpunit SandwichTest.php
   
+script: phpunit SandwichTest.php
