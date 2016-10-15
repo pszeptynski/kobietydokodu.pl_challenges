@@ -23,6 +23,10 @@ class getSandwichTest extends PHPUnit_Framework_TestCase {
     public function testTwoBreadPiecesOnly() {
         $this->assertEquals("", Sandwich::getSandwich("breadbread"));
     }
+    
+    public function testEmptyInputString() {
+        $this->assertEquals("", Sandwich::getSandwich(""));
+    }
 }
 
 ?>
