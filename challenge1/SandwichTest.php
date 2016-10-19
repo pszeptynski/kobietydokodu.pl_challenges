@@ -5,28 +5,47 @@ include("Sandwich.php");
 class getSandwichTest extends PHPUnit_Framework_TestCase {
 
     public function testNoBreadPiece() {
-        $this->assertEquals("", Sandwich::getSandwich("eggBACONcheese"));
+        $expected = "";
+        $testString = "eggBACONcheese";
+        $this->assertEquals($expected, Sandwich::getSandwich($testString));
     }
 
     public function testOneBreadPiece() {
-        $this->assertEquals("", Sandwich::getSandwich("justonepieceofbreadininput"));
+        $expected = "";
+        $testString = "justonepieceofbreadininput";
+        $this->assertEquals($expected, Sandwich::getSandwich($testString));
     }
 
     public function testEggInBetween() {
-        $this->assertEquals("egg", Sandwich::getSandwich("breadeggbread"));
+        $expected = "egg";
+        $testString = "breadeggbread";
+        $this->assertEquals($expected, Sandwich::getSandwich($testString));
     }
 
     public function testIngredientMix() {
-        $this->assertEquals("BACON", Sandwich::getSandwich("EGGbreadBACONbreadCHEESE"));
+        $expected = "BACON";
+        $testString = "EGGbreadBACONbreadCHEESE";
+        $this->assertEquals($expected, Sandwich::getSandwich($testString));
     }
 
     public function testTwoBreadPiecesOnly() {
-        $this->assertEquals("", Sandwich::getSandwich("breadbread"));
+        $expected = "";
+        $testString = "breadbread";
+        $this->assertEquals($expected, Sandwich::getSandwich($testString));
     }
-    
+
     public function testEmptyInputString() {
-        $this->assertEquals("", Sandwich::getSandwich(""));
+        $expected = "";
+        $testString = "";
+        $this->assertEquals($expected, Sandwich::getSandwich($testString));
     }
+
+    public function testManyBreadPieces() {
+        $expected = "breadBACONbread";
+        $testString = "breadbreadBACONbreadbread";
+        $this->assertEquals($expected, Sandwich::getSandwich($testString));
+    }
+
 }
 
 ?>
