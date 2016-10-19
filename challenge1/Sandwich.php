@@ -4,7 +4,7 @@ class Sandwich {
 
     public static function getSandwich($ingredients) {
         $result = "";
-        $teststring = "/.*bread(.+)bread.*/";
+        $teststring = "/bread(.+)bread/";
         if (preg_match($teststring, $ingredients, $between)) {
             $result = $between[1];
         }
